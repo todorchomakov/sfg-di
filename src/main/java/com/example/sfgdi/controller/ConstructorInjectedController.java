@@ -1,7 +1,9 @@
 package com.example.sfgdi.controller;
 
 import com.example.sfgdi.service.GreetingService;
+import org.springframework.stereotype.Controller;
 
+@Controller
 public class ConstructorInjectedController {
 
     private final GreetingService greetingService;
