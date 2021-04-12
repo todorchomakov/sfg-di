@@ -1,4 +1,4 @@
-package com.example.sfgdi.service;
+package com.example.pets;
 
 public interface PetService {
 
