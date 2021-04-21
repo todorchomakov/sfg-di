@@ -2,14 +2,28 @@ package com.example.sfgdi.config;
 
 import com.example.pets.PetService;
 import com.example.pets.PetServiceFactory;
+import com.example.sfgdi.datasource.FakeDataSource;
 import com.example.sfgdi.repository.EnglishGreetingRepository;
 import com.example.sfgdi.repository.EnglishGreetingRepositoryImpl;
 import com.example.sfgdi.service.*;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.*;
 
+@PropertySource("classpath:datasource.properties")
 @ImportResource("classpath:sfgdi-config.xml")
 @Configuration
 public class GreetingServiceConfig {
+
+    @Bean
+    FakeDataSource fakeDataSource(@Value("${ds.username}") String userName,
+                                  @Value("${ds.password}") String password,
+                                  @Value("${ds.url}") String jdbcUrl) {
+        FakeDataSource fakeDataSource = new FakeDataSource();
+        fakeDataSource.setUserName(userName);
+        fakeDataSource.setPassword(password);
+        fakeDataSource.setJdbcUrl(jdbcUrl);
+        return fakeDataSource;
+    }
 
     @Bean
     PetServiceFactory petServiceFactory() {
