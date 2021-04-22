@@ -1,0 +1,4 @@
+ds:
+  username: yml_qa_superuser
+  password: yml_qa_pass
+  url: yml_qa_someUrl
