@@ -1,8 +1,19 @@
 spring:
     profiles:
-        active: dog, EN, qa
+        active:
+          -  dog
+          -  EN
+          -  dev
 
 ds:
   username: yml_superuser
   password: yml_pass
   url: yml_someUrl
+
+---
+spring:
+    profiles: prod
+ds:
+  username: yml_prod_superuser
+  password: yml_prod_pass
+  url: yml_prod_someUrl
