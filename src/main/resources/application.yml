@@ -1,0 +1,8 @@
+spring:
+    profiles:
+        active: dog, EN
+
+ds:
+  username: yml_superuser
+  password: yml_pass
+  url: yml_someUrl
